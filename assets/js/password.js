@@ -2,7 +2,7 @@
 
 
 // Upon button getting clicked a window appears with prompts
-function generatePassword() {
+function generatePassword(passwordLength) {
  var passwordLength = prompt("Please enter a password length. It must be more than 8 characters but less than 128 characters.")
  // If the user does not enter a valid response 8-128
  if (passwordLength >= 8 && passwordLength <= 128) {
@@ -86,10 +86,11 @@ if (numbers === false && upperCases === false && lowerCases === false && special
 
 // Empty string for "for" loop
 var randomPasswordGenerated = "";
+var randomChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+?><.,"
 
 for (var i = 0; i < (parseInt(passwordLength)); i++) {
- var randomNumberPicked = Math.floor(Math.random() * 4);
- randomPasswordGenerated += randomNumberPicked;
+ randomPasswordGenerated += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
+ 
 }
 
 // To add characters to generated password
